@@ -1,0 +1,281 @@
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poiret+One&family=Sigmar&display=swap');
+
+/* Reset */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header, nav, main, footer{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding: 5px;
+    color: #eaf3ff;
+}
+
+header{
+    height: 100px;
+    background-color: #084188;
+    color: #edf4ff;
+    padding: 50px;
+    font-family: "Sigmar", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+
+nav{
+    background-color: #1951aa;
+    padding: 20px;
+    font-family: "Poiret One", sans-serif;
+    font-weight: 400;
+}
+
+
+main{
+    background-color: #3c79da;
+    padding: 50px;
+}
+
+footer{
+    background-color: #084188;
+    padding: 10px;
+    text-align: center;
+}
+
+footer p{
+    font-family: "Sigmar", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #FFFFFF;
+}
+
+section{
+    width: 70%;
+    background-color: #bfd8f7;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+section:hover{
+    opacity: 1;
+    transform: scale(1.0001);
+    background-color: #d2e6ff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 1s ease-in-out;
+}
+p{
+    margin: 10px 0;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+h1,h2,h3,h4,h5,h6 {
+    margin-bottom: 20px;
+    font-family: "Sigmar", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+nav ul{
+    text-align: center;
+    color: aliceblue;
+    padding: 0;
+}
+
+
+nav ul li{
+    width: 120px;
+    height: 30px;
+    background-color: #c3daff;
+    list-style-type: none;
+    margin-bottom: 10px;
+    display: inline-block;
+    border-radius: 15px
+}
+nav ul li:hover{
+    background-color: bisque;
+    color: firebrick;
+    transform: scale(1.05);
+    transition: transform 0.1s ease-in-out;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+}
+
+nav a{
+text-decoration: none;
+}
+
+
+/* Enlace no visitado */ 
+a:link {
+    color: #003270;
+    }
+            
+            
+/* Enlace visitado */
+a:visited {
+    color: ;
+}
+            
+            
+/* Cursor sobre el enlace */
+a:hover {
+    color: #001e44;
+    text-decoration: underline; /*subrayado*/
+    }
+         
+            
+/* Enlace siendo clickeado */
+a:active {
+    color: #ff8e00;
+    }
+
+
+/* Propiedades individuales de cada archivo */
+
+img{
+    width: 50%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#img_gif{
+    width: 50%;
+    border-radius: 50%;
+    
+}
+.img_float{
+    width: 20%;
+    display: block;
+}
+#img_izq{
+    float: left;
+    
+}
+#img_der{
+    float: right;
+}
+#img_bot{
+    float:inherit;
+}
+#img_ico{
+    width: 54px;
+    height: auto;
+    margin-right: 0px;
+}
+#fondoimg{
+    background-image:url(/Users/protogrg/Documents/01.- Uni/11. Noveno/3.- Dis. De interfaces/imagenes)
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-size: cover;
+    
+}
+.parrafo_1{
+    width: 50%;
+    color: aliceblue;
+}
+
+p{
+    margin-bottom: 20px;
+    color:#7068d8;
+}
+section h2, h3{
+    color: #7068d8;
+}
+
+audio,iframe{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+video{
+    width: 360px;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    
+}
+.box_videos{
+    text-align: center;
+ 
+}
+.box_video section{
+    width: 45%;
+    min-width: 360px;
+    height: 600px;
+    display:inline-block;
+    margin-right: 30px;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    overflow-y: auto;
+    
+}
+form{
+    width: 70%;
+    background-color: #d3eeff;
+    padding: 50px;
+    height: auto;
+    color: #4155c6;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 8px;
+}
+input[type=text], select{ 
+    width: 100%;
+    height: 40px;
+    padding: 8px;
+    margin-top: 10px;
+    padding: 8px;
+    color: green;
+    background-color: #d8e2f0;
+    border-radius: 20px;
+    color:#7068d8;
+    font-family: "Lato", sans-serif;
+}
+input[type=text]:focus{
+    background-color: bisque;
+    color: black;
+}
+label{
+    margin-bottom: 10px;
+    font-family: "Lato", sans-serif;
+}
+input[type=submit]{
+    margin-top: 20px;
+    width: 50%;
+    background-color: #4787ff;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px; 
+    border-color: #dcb414;
+    display: block;
+}
+input[type=range]{
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+
+br{
+   line-height: 1;
+}
