@@ -1,0 +1,515 @@
+<html>
+    <head>
+       <style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poiret+One&family=Sigmar&display=swap');
+</style>
+       <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+        <title>Tablas en HTML</title>
+    </head>
+    
+
+    <body>
+        <header>
+            <h1> TABLAS</h1>
+        </header>
+        <style type="text/css">
+            *{
+            pading: 0;
+            margin: 0;
+            }
+            header,nav,main,footer{
+                width: 100%;
+                color: papayawhip;
+                padding: 30px;
+                box-sizing: border-box;
+            }
+            header,footer{
+                height: 100px;
+                background-color: deeppink;
+                text-align: center;
+            }
+            nav{
+                height: auto;
+                background-color: pink;
+            }
+            main{
+                height: auto;
+                background-color: lightpink;
+            }
+            footer{
+                height: auto;
+            }
+            section{
+                width: 70%;
+                height: auto;
+                background-color: bisque;
+                color: deeppink;
+                margin-bottom: 30px;
+                padding: 30px;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 15px;
+                overflow-x: auto;
+                box-shadow: 0px 2px 10px;
+            }
+            h2{
+                margin-bottom: 20px;
+            }
+            nav ul{
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+            nav ul li{
+                width: 10%;
+                list-style-type: none;
+                background-color: bisque;
+                padding: 10px;
+                margin-bottom: 10px;
+                margin-left: 10px;
+                margin-right: 10px;
+                display: inline-block;
+                text-align: center;
+                border-radius: 15px;
+            }
+            nav ul li:hover{
+                width: 12%;
+            }
+            
+            
+            
+            #tab_simple{
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 30px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: deeppink;
+                border-collapse: collapse;
+            }
+            
+            #tab_simple, #tab_ simple td{
+                border-width: 3px;
+                border-style: solid;
+                border-color: mistyrose;
+            }
+            
+            #tab_simple th{
+                background-color: hotpink;
+                color: bisque;
+                text-align: left;
+                padding: 5px;
+            }
+            
+            #tab_simple td{
+                background-color: lightpink;
+                border-width: 3px;
+                border-style: solid;
+                border-color: mistyrose;
+                padding: 10px;
+            }
+            
+            
+            
+            #tab_libros{
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 30px;
+                border-collapse: collapse;
+                border-style: solid;
+                border-width: 5px;
+                background-color: lightblue;
+            }
+            #tab_libros th{
+                background-color: darkblue;
+                color: aliceblue;
+                text-align: center;
+                height: 80px;
+            }
+            #tab_libros td{
+                /*background-color: lightblue;*/
+                color: midnightblue;
+                height: 50px;
+                text-align: center;
+                
+            }
+            #tab_libros td, #tab_libros th{
+                border-width: 2px; 
+                border-style: solid;
+                border-color: steelblue;
+            }
+            #tab_libros tbody tr:hover{
+                background-color: lightyellow;
+            }
+           
+            /*Esta Regla genera el hover en las celdas que corresponden al tbody
+            
+            #tab_libros tbody tr:hover{
+                background-color: lightyellow;
+            }
+            */            
+            
+            #tab_pelis{
+                width: 85%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 30px;
+                /*border-collapse: collapse;*/
+                border-spacing: 8px;
+            }
+            
+            #tab_pelis th{
+                background-color: #5b2493;
+                color: #ffffff;
+                height: 50px;
+            }
+            #tab_pelis td{
+                height: 30px;
+                padding: 10px;
+            }
+            
+            #tab_pelis th, #tab_pelis td{
+                border-width: 4px;
+                border-color: #9c93de;
+                border-style: solid;
+            }
+            #tab_pelis tbody tr:nth-child(even){
+                background-color: #efdfff;
+                color: rebeccapurple;
+            }
+            #tab_pelis tbody tr:nth-child(odd){
+                background-color: #d9b4ff;
+                color: #7535b7;
+            }
+            
+            
+            
+            #tab_responsive{
+                width: 1800px;
+                background-color: mediumpurple;
+                color: floralwhite;
+            }
+            
+            #tab_responsive th{
+                background-color: rebeccapurple;
+                height: 50px;
+                padding: 10px;
+            }
+            #tab_responsive td, #tab_responsive {
+                border: 3px solid floralwhite;
+                height: 50px;
+                margin-top: 30px;
+            }
+            
+        </style>
+        <nav>
+<!--            Menu de la pagina Web-->
+                <ul>
+                <li> <a href="../html/1%20Formatos%20Texto.html">Formatos</a> </li>
+                <li> <a href="../html/2%20Listas.html">Listas</a> </li>
+                <li> <a href="../html/3%20Enlaces.html">Enlaces</a> </li>
+                <li> <a href="../html/4%20Tablas.html">Tablas</a> </li>
+                <li> <a href="../html/5%20Imagenes.html">Imagenes</a> </li>
+                <li> <a href="../html/6%20Audios.html">Audios</a> </li>
+                <li> <a href="../html/7%20Video.html">Videos</a> </li>
+                <li> <a href="../html/8%20Formulario.html">Formularios</a> </li>
+                </ul>
+        </nav>
+        <main>
+            <section>
+                <h2> Tabla Simple</h2>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sapien urna, semper eget velit sollicitudin, eleifend tempus ipsum. Nullam quis tellus viverra, pellentesque massa vel, ornare odio. Nam dictum elementum erat in ultrices. Sed placerat a massa eu congue. Etiam eu urna non urna ullamcorper accumsan et quis dolor. Proin sit amet iaculis lacus. Phasellus pulvinar leo non dolor rutrum, et faucibus orci viverra. Donec vel massa ipsum. Proin id leo metus.
+                    
+                Sed blandit rhoncus dolor, quis tincidunt eros egestas at. Maecenas et nulla quis nisl gravida tincidunt sit amet tristique dolor. Pellentesque nec egestas turpis, sed porta nibh. Pellentesque.
+                </p>
+                <table id="tab_simple">
+                    <thead>
+                        <tr>
+                            <th>Matricula</th>
+                            <th>Nombre</th>
+                            <th>Apellido Paterno</th>
+                            <th>Appellido materno</th>
+                            <th>Celular</th>
+                            <th>Colegio</th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>202136589</td>
+                            <td>Jose Luis</td>
+                            <td>Benites</td>
+                            <td>Moreno</td>
+                            <td>2221569896</td>
+                            <td>Arquitectura</td>
+                        </tr>
+                        <tr>
+                            <td>202365741</td>
+                            <td>Andrea</td>
+                            <td>Solis</td>
+                            <td>Gonzales</td>
+                            <td>2223366841</td>
+                            <td>Diseno Grafico</td>
+                        </tr>
+                        <tr>
+                            <td>202425236</td>
+                            <td>Guillermo</td>
+                            <td>Perez</td>
+                            <td>Martines</td>
+                            <td>222145875</td>
+                            <td>Urbano Ambiental</td>
+                        </tr>
+                        <tr>
+                            <td>202042488</td>
+                            <td>Santiago</td>
+                            <td>Juarez</td>
+                            <td>Hernandes</td>
+                            <td>2224586563</td>
+                            <td>Arquitectura</td>
+                        </tr>
+                        <tr>
+                            <td>202187654</td>
+                            <td>Carlos</td>
+                            <td>Ramirez</td>
+                            <td>Torres</td>
+                            <td>2229876543</td>
+                            <td>Ingeniería Civil</td>
+                        </tr>
+                    </tbody>
+                    <tfoot> 
+                        
+                    </tfoot>
+                </table>
+            </section>
+            <section>
+                <h2>Tabla</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a fermentum risus. Donec et metus feugiat, ornare tellus at, lobortis enim. Etiam id mauris orci. Nunc at mollis nisi. Fusce sagittis porttitor neque non accumsan. Phasellus laoreet leo ac commodo commodo. Ut nisl purus, viverra vel sem vitae, tincidunt euismod turpis. Vestibulum auctor, mauris vitae egestas scelerisque, lacus tellus sodales nisi, sodales euismod ligula ante vel nulla. Quisque a elit et ex pharetra iaculis sit amet in tellus. Proin sagittis.</p>
+                <table id="tab_Libros">
+                    <thead>
+                        <tr>
+                            <th>Titulo</th>
+                            <th>Año</th>
+                            <th>Editorial</th>
+                            <th>Autor</th>
+                            <th>Genero</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cronica de una Muerte Anunciada</td>
+                            <td>1981</td>
+                            <td>Editorial Sudamericana</td>
+                            <td>Gabriel Garcia Marquez</td>
+                            <td>Novela</td>
+                            <td>$250</td>
+                        </tr>
+                        <tr>
+                            <td>Asesino de Brujas</td>
+                            <td>2015</td>
+                            <td>Hachette</td>
+                            <td>Virginia Boecker</td>
+                            <td>Novela</td>
+                            <td>$450</td>
+                        </tr>
+                        <tr>
+                            <td>Lecciones de Stoicismo de Marco Aurelio</td>
+                            <td>2020</td>
+                            <td>Pinguino</td>
+                            <td>Jonh Cellars</td>
+                            <td>Filosofía</td>
+                            <td>$280</td>
+                        </tr>
+                        <tr>
+                            <td>La Cancion de Aquiles</td>
+                            <td>2011</td>
+                            <td>Bloomsbury</td>
+                            <td>Madeline Miller</td>
+                            <td>Ficción Histórica</td>
+                            <td>$350</td>
+                        </tr>
+                        <tr>
+                            <td>Ready player One</td>
+                            <td>2011</td>
+                            <td>Crown Publishing</td>
+                            <td>Ernest Cline</td>
+                            <td>Ciencia Ficción</td>
+                            <td>$400</td>
+                        </tr>
+                        <tr>
+                            <td>Hush, Hush</td>
+                            <td>2018</td>
+                            <td>Pinguino</td>
+                            <td>Patrick</td>
+                            <td>Novela</td>
+                            <td>$300</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                    
+                    </tfoot>
+                </table>
+            </section>
+            <section>
+                <h2>Tabla </h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque convallis blandit lectus, lacinia molestie leo tincidunt at. Vivamus lobortis placerat massa, ac convallis tortor porttitor a. Sed pellentesque porttitor blandit. Mauris id condimentum ligula. Mauris vestibulum, urna id malesuada eleifend, tortor neque ullamcorper nulla, vitae fermentum lectus arcu eu arcu. Pellentesque dignissim lacus diam, non auctor felis suscipit vel. Cras.
+                </p>
+                
+                <table id="tab_pelis">
+                    <thead>
+                        <tr>
+                            <th>Pelicula</th>
+                            <th>Director</th>
+                            <th>Año</th>
+                            <th>Genero</th>
+                            <th>Clasificcion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>El origen</td>
+                            <td>Chistopher Nolan</td>
+                            <td>2010</td>
+                            <td>Accion</td>
+                            <td>B</td>
+                        </tr>
+                        <tr>
+                            <td>Busqueda Implacable</td>
+                            <td>Pierre Mole</td>
+                            <td>2008</td>
+                            <td>Accion</td>
+                            <td>B15</td>
+                        </tr>
+                        <tr>
+                            <td>Interestelar</td>
+                            <td>Chistopher Nolan</td>
+                            <td>2014</td>
+                            <td>Ciencia ficcion</td>
+                            <td>B</td>
+                        </tr>
+                        <tr>
+                            <td>El Ojo</td>
+                            <td>Oxide Pang Chun</td>
+                            <td>2002</td>
+                            <td>Terror</td>
+                            <td>C</td>
+                        </tr>
+                        <tr>
+                            <td>Eterno Resplandor</td>
+                            <td>Michael Goondry</td>
+                            <td>2004</td>
+                            <td>Drama Romantico</td>
+                            <td>B15</td>
+                        </tr>
+                        <tr>
+                            <td>Shrek</td>
+                            <td>Joe Stillman</td>
+                            <td>2001</td>
+                            <td>Comedia</td>
+                            <td>AA</td>
+                        </tr>
+                        <tr>
+                            <td>La Vida es Bella</td>
+                            <td>Roberto Benigni</td>
+                            <td>1997</td>
+                            <td>Drama</td>
+                            <td>AA</td>
+                        </tr>
+                        <tr>
+                            <td>Crepusculo</td>
+                            <td>Catherine Harwicke</td>
+                            <td>2008</td>
+                            <td>Fantasia</td>
+                            <td>B15</td>
+                        </tr>
+                        <tr>
+                            <td>Ted</td>
+                            <td>Seth MacFarlane</td>
+                            <td>2012</td>
+                            <td>Comedia Negra</td>
+                            <td>B15</td>
+                        </tr>
+                    </tbody>
+                    
+                    <tfood>
+                    </tfood>
+                    
+                </table>
+            </section>
+            <section style="overflow-x: auto">
+                <h2> Tabla Simple</h2>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sapien urna, semper eget velit sollicitudin, eleifend tempus ipsum. Nullam quis tellus viverra, pellentesque massa vel, ornare odio. Nam dictum elementum erat in ultrices. Sed placerat a massa eu congue. Etiam eu urna non urna ullamcorper accumsan et quis dolor. Proin sit amet iaculis lacus. Phasellus pulvinar leo non dolor rutrum, et faucibus orci viverra. Donec vel massa ipsum. Proin id leo metus.
+                    
+                Sed blandit rhoncus dolor, quis tincidunt eros egestas at. Maecenas et nulla quis nisl gravida tincidunt sit amet tristique dolor. Pellentesque nec egestas turpis, sed porta nibh. Pellentesque.
+                </p>
+                <table id="tab_responsive">
+                    <thead>
+                        <tr>
+                            <th>Matricula</th>
+                            <th>Nombre</th>
+                            <th>Apellido Paterno</th>
+                            <th>Appellido materno</th>
+                            <th>Celular</th>
+                            <th>Colegio</th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>202136589</td>
+                            <td>Jose Luis</td>
+                            <td>Benites</td>
+                            <td>Moreno</td>
+                            <td>2221569896</td>
+                            <td>Arquitectura</td>
+                        </tr>
+                        <tr>
+                            <td>202365741</td>
+                            <td>Andrea</td>
+                            <td>Solis</td>
+                            <td>Gonzales</td>
+                            <td>2223366841</td>
+                            <td>Diseno Grafico</td>
+                        </tr>
+                        <tr>
+                            <td>202425236</td>
+                            <td>Guillermo</td>
+                            <td>Perez</td>
+                            <td>Martines</td>
+                            <td>222145875</td>
+                            <td>Urbano Ambiental</td>
+                        </tr>
+                        <tr>
+                            <td>202042488</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>2224586563</td>
+                            <td>Arquitectura</td>
+                        </tr>
+                        <tr>
+                            <td>202187654</td>
+                            <td>Carlos</td>
+                            <td>Ramirez</td>
+                            <td>Torres</td>
+                            <td>2229876543</td>
+                            <td>Ingeniería Civil</td>
+                        </tr>
+                    </tbody>
+                    <tfoot> 
+                        
+                    </tfoot>
+                </table>
+            </section>
+        </main>
+        <footer>
+            <h5> Elaborado por Gary J. Lobato</h5>
+        </footer>
+        
+    </body>
+</html>

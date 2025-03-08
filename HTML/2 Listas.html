@@ -1,0 +1,379 @@
+   <html>
+   
+    <head>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poiret+One&family=Sigmar&display=swap');
+</style>
+       <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+       
+        <title>Lista en HTML</title>
+        <style type="text/css">
+            
+          
+            *{
+                margin: 0px;
+                padding: 0px;
+                box-sizing: border-box;
+            }
+            
+    /*Estructura principal*/
+            
+            header, nav, main, footer {
+                background-color: #56c169;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+                padding: 5px;    
+            }
+            
+            header{
+                height: 100px;
+                background-color: #55ac65;
+                color: aliceblue;
+                padding: 50px;
+                font-family: "Sigmar", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                text-align: center;
+            }
+            
+            
+            nav{
+                background-color: #57c66b;
+                padding: 20px;
+                font-family: "Poiret One", sans-serif;
+                font-weight: 400;
+            }
+            
+            
+            main{
+                background-color: #91efa2;
+                text-align: center;
+                padding: 50px;
+            }
+            
+            
+            footer {
+                background-color: #53ac63;
+                padding: 10px;
+                text-align: center;
+        }
+            
+            
+    /* Secciones */
+            section{
+                width: 45%;
+                min-width: 360px;
+                max-height: 510px;
+                min-height: 500px;
+                background-color: #bff5c9;
+                margin-bottom: 20px;
+                margin-right: 10px;
+                margin-left: 10px;
+                border-radius: 15px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                transition: all 0.8s ease-in-out;
+                padding: 50px;
+                display: inline-block;
+                overflow-y: auto;
+            }
+            
+            
+            section:hover{
+                opacity: 1;
+                transform: scale(1.01);
+                background-color: #c4ffcf;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            }
+            
+            
+            footer h6 {
+                color: white;
+                margin: 0;
+        }
+            
+            
+    /* Tipografía */            
+            h1,h2,h3,h4,h5,h6 {
+                margin-bottom: 10px;
+                font-family: "Sigmar", sans-serif;
+            }
+            
+            
+            p{
+                margin: 10px 0;
+                font-family: "Lato", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                text-align: left;
+            }
+            
+            
+            #titulo  {
+                font-family: "Sigmar", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                text-align: center;
+                
+            }
+            
+            
+            ul,ol{
+                text-align: left;
+                margin-right: 50px;
+                padding: 10px;
+            }
+
+            
+     /* Navegación */
+            nav ul {
+                text-align: center;
+                color: #163e1d;
+                padding: 0;
+                
+            }
+            
+            
+            nav ul li {
+                width: 120px;
+                height: 30px;
+                background-color: #8de39c;
+                list-style-type: none;
+                margin-bottom: 10px;
+                display: inline-block;
+                border-radius: 15px;
+        }
+            
+            
+            nav li:hover {
+                background-color: bisque;
+                color: firebrick;
+                transform: scale(1.05);
+                transition: transform 0.1s ease-in-out;
+                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+                transform: translateY(-5px);
+            }
+            
+
+    /* Listas */
+            nav a{
+                text-decoration: none;
+            }
+            
+            
+        ul, ol {
+            padding-left: 40px;
+            margin-left: 15px;
+        }
+
+            
+        .lista-mixta ol {
+            list-style-type: lower-alpha;
+        }
+
+            
+        .lista-mixta ul {
+            list-style-type: circle;
+            margin-left: 15px;
+        }
+
+            
+            /* Estados para los enlaces */
+    
+            
+/* Enlace no visitado */ 
+            a:link {
+                color: #003270;
+    }
+            
+            
+/* Enlace visitado */  a:visited {
+    color: ;
+    }
+            
+            
+/* Cursor sobre el enlace */
+            a:hover {
+                color: #001e44;
+                text-decoration: underline; /*subrayado*/
+    }
+         
+            
+/* Enlace siendo clickeado */
+            a:active {
+                color: #ff8e00;
+    }
+        
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 class="animate__animated animate__bounce" id="titulo"> Listas en HTML</h1>
+        </header>
+        
+    <!--        Navegacion en la pagina web-->    
+        <nav>
+<!--            Menu de la pagina Web-->
+                <ul>
+                <li> <a href="../html/1%20Formatos%20Texto.html">Formatos</a> </li>
+                <li> <a href="../html/2%20Listas.html">Listas</a> </li>
+                <li> <a href="../html/3%20Enlaces.html">Enlaces</a> </li>
+                <li> <a href="../html/4%20Tablas.html">Tablas</a> </li>
+                <li> <a href="../html/5%20Imagenes.html">Imagenes</a> </li>
+                <li> <a href="../html/6%20Audios.html">Audios</a> </li>
+                <li> <a href="../html/7%20Video.html">Videos</a> </li>
+                <li> <a href="../html/8%20Formulario.html">Formularios</a> </li>
+                </ul>
+            
+        </nav>
+        <main>
+            <section>
+                <h2>Litas Desaordenadas</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis cursus non tellus nec sagittis. Sed mattis felis vitae malesuada placerat. Vivamus eget quam aliquet, auctor quam at, eleifend mauris. Sed tincidunt nunc sed ipsum tincidunt, sit amet maximus tellus imperdiet. In hendrerit id eros faucibus feugiat. Curabitur sit amet ultricies elit, in feugiat erat. Vivamus luctus quam id metus scelerisque varius. Integer laoreet ullamcorper velit, sit amet sagittis augue laoreet eget. Curabitur molestie, justo nec efficitur placerat, nulla risus sagittis dui, ut lobortis sem dolor vel nisl. Nullam vitae est nec enim tempus bibendum nec quis sapien. Vestibulum ante ipsum.
+                    </p>
+                <ul>
+                    <li>Argentina</li>
+                    <li>Bolivia</li>
+                    <li>Colombia</li>
+                    <li>Dinamarca</li>
+                    <li>Espana</li>
+                    <li>Francia</li>
+                    <li>Guatemala</li>
+                    <li>Mexico</li>
+                    <li>Nigeria</li>
+                    <li>Puerto Rico</li>
+                    <li>Rusia</li>
+                    <li>Sudafrica</li>
+                    <li>turquia</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Litas Ordenadas</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis cursus non tellus nec sagittis. Sed mattis felis vitae malesuada placerat. Vivamus eget quam aliquet, auctor quam at, eleifend mauris. Sed tincidunt nunc sed ipsum tincidunt, sit amet maximus
+                    </p>
+                <ol>
+                    <li>Aguas Calientes</li>
+                    <li>Baja California</li>
+                    <li>Colima</li>
+                    <li>Durango</li>
+                    <li>Estado de Mexico</li>
+                    <li>Guanajuato</li>
+                    <li>Hidalgo</li>
+                    <li>Jalisco</li>
+                    <li>Michoacan</li>
+                    <li>Oaxaca</li>
+                    <li>Puebla</li>
+                    <li>San Luis Potosi</li>
+                    <li>Quintana Roo</li>
+                </ol>
+            </section>
+            <section id="box_listamixta">
+                <h2>Litas Mixtas</h2>
+                   
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis cursus non tellus nec sagittis. Sed mattis felis vitae malesuada placerat. Vivamus eget quam aliquet, auctor quam at, eleifend mauris. Sed tincidunt nunc sed ipsum tincidunt, sit amet maximus tellus imperdiet. In hendrerit id eros faucibus feugiat. Curabitur sit amet ultricies elit, in feugiat erat. Vivamus luctus quam id metus scelerisque varius.
+                    </p>
+                <ol>
+    <li style="list-style-type: lower-alpha">Querétaro
+        <ul>
+            <li>Querétaro (capital)</li>
+            <li>San Juan del Río</li>
+            <li>Tequisquiapan</li>
+            <li>El Marqués</li>
+            <li>Corregidora</li>
+            <li>Cadereyta de Montes</li>
+            <li>Jalpan de Serra</li>
+            <li>Amealco de Bonfil</li>
+        </ul>
+    </li>
+    <li style="list-style-type: lower-alpha">Sonora
+        <ul>
+            <li>Hermosillo</li>
+            <li>Ciudad Obregón</li>
+            <li>Nogales</li>
+            <li>San Luis Río Colorado</li>
+            <li>Guaymas</li>
+            <li>Caborca</li>
+            <li>Puerto Peñasco</li>
+            <li>Navojoa</li>
+            <li>Agua Prieta</li>
+            <li>Cananea</li>
+        </ul>
+    </li>
+    <li style="list-style-type: lower-alpha">Veracruz
+        <ul>
+            <li>Xalapa</li>
+            <li>Boca del Río</li>
+            <li>Coatzacoalcos</li>
+            <li>Minatitlán</li>
+            <li>Córdoba</li>
+            <li>Orizaba</li>
+            <li>Tuxpan</li>
+            <li>Poza Rica</li>
+            <li>Papantla</li>
+            <li>Acayucan</li>
+        </ul>
+    </li>
+    <li style="list-style-type: lower-alpha">Puebla
+        <ul>
+            <li>Cholula</li>
+            <li>Atlixco</li>
+            <li>Acajete</li>
+            <li>Zacatlán</li>
+            <li>Acatzingo</li>
+            <li>Amozoc</li>
+            <li>Calpan</li>
+            <li>Izúcar de Matamoros</li>
+            <li>Huejotzingo</li>
+            <li>Chignahuapan</li>
+            <li>Tehuiltzingo</li>
+        </ul>
+    </li>
+    <li style="list-style-type: lower-alpha">Zacatecas
+        <ul>
+            <li>Apulco</li>
+            <li>Atolinga</li>
+            <li>Benito Juárez</li>
+            <li>Calera</li>
+            <li>Concepción del Oro</li>
+            <li>Fresnillo</li>
+            <li>Jerez</li>
+            <li>Valparaíso</li>
+            <li>Sombrerete</li>
+        </ul>
+    </li>
+    <li style="list-style-type: lower-alpha">Chihuahua
+        <ul>
+            <li>Ciudad Juárez</li>
+            <li>Chihuahua (capital)</li>
+            <li>Delicias</li>
+            <li>Cuauhtémoc</li>
+            <li>Hidalgo del Parral</li>
+            <li>Nuevo Casas Grandes</li>
+            <li>Ojinaga</li>
+        </ul>
+    </li>
+    <li style="list-style-type: lower-alpha">Nuevo León
+        <ul>
+            <li>Monterrey</li>
+            <li>San Nicolás de los Garza</li>
+            <li>Guadalupe</li>
+            <li>Apodaca</li>
+            <li>Santa Catarina</li>
+            <li>Escobedo</li>
+            <li>San Pedro Garza García</li>
+            <li>Linares</li>
+        </ul>
+    </li>
+</ol>
+            </section>
+                </main>
+        <footer>
+        <b><h6>Lobato de los Santos Gary Jeneries</h6></b>
+        </footer>
+        
+    </body>
+</html>
