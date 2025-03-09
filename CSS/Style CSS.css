@@ -153,9 +153,11 @@ img{
 }
 
 #img_gif{
-    width: 50%;
-    border-radius: 50%;
-    
+    width: 20%;
+    border-radius: 40%;
+    float: right;
+    display: block;
+    margin: 0;
 }
 .img_float{
     width: 20%;
@@ -163,29 +165,34 @@ img{
 }
 #img_izq{
     float: left;
+    display: block;
     
 }
 #img_der{
     float: right;
+    display: block;
 }
-#img_bot{
-    float:inherit;
-}
+
 #img_ico{
-    width: 54px;
     height: auto;
+    width: 3px;
     margin-right: 0px;
 }
 #fondoimg{
-    background-image:url(/Users/protogrg/Documents/01.- Uni/11. Noveno/3.- Dis. De interfaces/imagenes)
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-image: url(../Imagenes/p1.png);
     background-size: cover;
+    background-position: center;
+    min-height: 400px;
     
 }
 .parrafo_1{
     width: 50%;
     color: aliceblue;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    background-color: rgba(114, 186, 248, 0.1);
+    background-blend-mode: multiply;
+    padding: 10px;
+    border-radius: 15px;
 }
 
 p{
