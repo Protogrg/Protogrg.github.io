@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>BUAP · Seguro Facultativo IMSS | Portal de Estudiantes</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0A2240;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.5;
+      color: #1e293b;
+      padding: 2rem 1rem 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    /* Tarjeta principal contenedora */
+    .main-card {
+      max-width: 1000px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 2rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      border: 1px solid rgba(242, 169, 0, 0.15);
+    }
+
+    /* Encabezado BUAP */
+    .portal-header {
+      background: #0A2240;
+      color: white;
+      padding: 2rem 2rem 1.8rem;
+      position: relative;
+    }
+    .portal-header::after {
+      content: "";
+      position: absolute;
+      bottom: -0.5rem;
+      left: 2rem;
+      right: 2rem;
+      height: 1rem;
+      background: #F2A900;
+      border-radius: 1rem;
+      opacity: 0.9;
+    }
+    .portal-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      letter-spacing: -0.2px;
+    }
+    .portal-header .uni-badge {
+      background: #F2A900;
+      color: #0A2240;
+      padding: 0.3rem 1.2rem;
+      border-radius: 2rem;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+    .portal-header .subtitle {
+      font-size: 1.1rem;
+      margin-top: 0.6rem;
+      font-weight: 400;
+      opacity: 0.92;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    /* Navegación rápida */
+    .quick-nav {
+      background: #f0f4fc;
+      padding: 1.5rem 2rem 0.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      border-bottom: 1px solid #e0eaf5;
+      margin-top: 0.2rem;
+    }
+    .quick-nav a {
+      text-decoration: none;
+      background: white;
+      border: 1px solid #ccdaea;
+      padding: 0.5rem 1.2rem;
+      border-radius: 2rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #0A2240;
+      transition: all 0.2s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+    .quick-nav a:hover {
+      background: #e6effa;
+      border-color: #F2A900;
+      color: #0A2240;
+      transform: translateY(-1px);
+    }
+
+    /* Contenido general */
+    .content {
+      padding: 2rem 2rem 2.5rem;
+      background: #ffffff;
+    }
+
+    /* Secciones como tarjetas internas */
+    .section-card {
+      background: #ffffff;
+      border: 1px solid #e9f0f7;
+      border-radius: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 25px -8px rgba(0, 30, 60, 0.08);
+      overflow: hidden;
+    }
+    .section-title {
+      background: #f5f9ff;
+      padding: 1.2rem 1.8rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0A2240;
+      border-bottom: 2px solid #F2A900;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .section-body {
+      padding: 1.5rem 1.8rem;
+    }
+
+    /* Tarjetas de pasos */
+    .step-card {
+      background: #ffffff;
+      border: 1px solid #eaf1fb;
+      border-left: 6px solid #0A2240;
+      border-radius: 1rem;
+      margin-bottom: 1.4rem;
+      padding: 1.2rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 20, 40, 0.04);
+      transition: box-shadow 0.15s;
+    }
+    .step-card:hover {
+      box-shadow: 0 8px 18px rgba(0, 20, 40, 0.08);
+    }
+    .step-card h4 {
+      color: #0A2240;
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .step-card .step-number {
+      background: #F2A900;
+      color: #0A2240;
+      font-weight: 800;
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      margin-right: 0.3rem;
+    }
+
+    /* Elementos colapsables */
+    details {
+      margin-bottom: 1.2rem;
+      background: #ffffff;
+      border: 1px solid #e3edf8;
+      border-radius: 1rem;
+      padding: 0.2rem 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    details[open] {
+      border-color: #c7daf0;
+      box-shadow: 0 6px 16px rgba(0, 30, 60, 0.06);
+    }
+    summary {
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 1rem 0.5rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #0A2240;
+    }
+    summary::-webkit-details-marker {
+      display: none;
+    }
+    summary::before {
+      content: "▸";
+      font-size: 1.4rem;
+      color: #F2A900;
+      transition: transform 0.2s;
+      display: inline-block;
+      width: 1.4rem;
+      text-align: center;
+    }
+    details[open] summary::before {
+      content: "▾";
+    }
+    .step-content {
+      padding: 0.3rem 0.5rem 1rem 2.5rem;
+      color: #1e293b;
+    }
+
+    .list {
+      padding-left: 1.8rem;
+      margin: 0.8rem 0;
+    }
+    .list li {
+      margin-bottom: 0.5rem;
+    }
+    .inline-code {
+      background: #edf3fc;
+      padding: 0.2rem 0.7rem;
+      border-radius: 2rem;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #0A2240;
+      white-space: nowrap;
+    }
+    .email-box {
+      background: #f4f8fe;
+      border-left: 5px solid #0A2240;
+      padding: 1rem 1.5rem;
+      border-radius: 0.8rem;
+      margin: 1.2rem 0;
+      font-family: monospace;
+      word-break: break-word;
+      font-size: 0.95rem;
+    }
+    .important-note {
+      background: #fff9e6;
+      border-left: 5px solid #F2A900;
+      padding: 1rem 1.4rem;
+      border-radius: 0.8rem;
+      margin: 1.2rem 0 1rem;
+      font-weight: 500;
+    }
+    .two-cols {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 0.8rem;
+    }
+    .two-cols > div {
+      flex: 1 1 250px;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #5f6c7a;
+      margin-top: 2rem;
+      padding: 1rem;
+      border-top: 1px solid #e2eaf1;
+    }
+
+    @media (max-width: 650px) {
+      .portal-header h1 {
+        font-size: 1.6rem;
+      }
+      .quick-nav a {
+        padding: 0.4rem 0.9rem;
+        font-size: 0.8rem;
+      }
+      .section-body {
+        padding: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="main-card">
+  
+  <!-- ENCABEZADO -->
+  <header class="portal-header">
+    <h1>
+      🎓 BUAP · Seguro Facultativo IMSS
+      <span class="uni-badge">Estudiantes</span>
+    </h1>
+    <div class="subtitle">
+      📋 Afiliación gratuita para alumnos de instituciones públicas
+    </div>
+  </header>
+
+  <!-- NAVEGACIÓN INTERNA -->
+  <div class="quick-nav">
+    <a href="#descripcion">📘 ¿Qué es?</a>
+    <a href="#procedimiento1">🏥 Método IMSS</a>
+    <a href="#procedimiento2">📧 Método BUAP (correo)</a>
+    <a href="#correos">📬 Correos campus</a>
+    <a href="#finalizar">✅ Ir a la clínica</a>
+  </div>
+
+  <div class="content">
+
+    <!-- DESCRIPCIÓN -->
+    <div class="section-card" id="descripcion">
+      <div class="section-title">📖 Descripción del programa</div>
+      <div class="section-body">
+        <p style="font-size:1.1rem; margin-bottom:0.8rem;">
+          <strong>Seguro de Salud para Estudiantes</strong> (seguro facultativo) · Cobertura médica gratuita del IMSS.
+        </p>
+        <p>Incluye consultas, medicamentos, cirugías, análisis y más. Las escuelas públicas están obligadas a afiliarte una vez que tengas tu NSS.</p>
+        <div class="important-note">
+          ⚠️ Sin tu Número de Seguridad Social (NSS) no puede completarse el registro escolar.
+        </div>
+      </div>
+    </div>
+
+    <!-- PROCEDIMIENTO 1: IMSS -->
+    <div class="section-card" id="procedimiento1">
+      <div class="section-title">🏥 Procedimiento directo IMSS</div>
+      <div class="section-body">
+        <details>
+          <summary>1. Obtener tu NSS</summary>
+          <div class="step-content">
+            <p>Con CURP, comprobante de domicilio y correo electrónico, usa la <strong>App IMSS Digital</strong> (Trámites y servicios) o acude a una Subdelegación.</p>
+          </div>
+        </details>
+        <details>
+          <summary>2. Acudir a Subdelegación (si es necesario)</summary>
+          <div class="step-content">
+            <p>Lleva identificación oficial y acta de nacimiento además de los documentos anteriores.</p>
+          </div>
+        </details>
+        <details>
+          <summary>3. Entregar NSS a tu escuela</summary>
+          <div class="step-content">
+            <p>Tu institución te registrará como estudiante ante el IMSS.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- PROCEDIMIENTO 2: BUAP -->
+    <div class="section-card" id="procedimiento2">
+      <div class="section-title">📧 Procedimiento BUAP (correo electrónico)</div>
+      <div class="section-body">
+        <div class="step-card">
+          <h4><span class="step-number">A</span> Reunir documentos digitales (PDF)</h4>
+          <ol class="list">
+            <li>Identificación oficial vigente</li>
+            <li>Comprobante de pago de inscripción/reinscripción</li>
+            <li>Kárdex simple (Autoservicios BUAP)</li>
+            <li>Constancia de Vigencia IMSS (si no tienes NSS, primero obténlo con el método IMSS)</li>
+          </ol>
+        </div>
+        <div class="step-card">
+          <h4><span class="step-number">B</span> Enviar correo</h4>
+          <p><strong>Asunto:</strong> <span class="inline-code">Solicitud de Afiliación al IMSS</span></p>
+          <p>Incluye en el cuerpo: nombre completo, matrícula, programa educativo, campus, correo IMSS y teléfono. Adjunta los 4 PDF.</p>
+          <p>Usa el correo de tu campus (ver <a href="#correos">lista</a>).</p>
+        </div>
+        <div class="step-card">
+          <h4><span class="step-number">C</span> Esperar 6 días hábiles</h4>
+          <p>No reenvíes antes. Verifica en <strong>IMSS Digital → Consulta tu Vigencia de Derechos</strong>.</p>
+        </div>
+        <div class="step-card">
+          <h4><span class="step-number">D</span> Acudir a la clínica (UMF)</h4>
+          <p>Lleva <strong>originales</strong>: Constancia de Vigencia impresa, identificación, comprobante de domicilio, comprobante de pago, CURP.</p>
+          <div class="important-note">
+            Si no aparece clínica asignada, usa <span class="inline-code">Alta de Clínica o UMF</span> en IMSS Digital.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CORREOS -->
+    <div class="section-card" id="correos">
+      <div class="section-title">📬 Correos electrónicos por campus</div>
+      <div class="section-body">
+        <div class="two-cols">
+          <div>
+            <p><strong>Centro:</strong><br> <span class="inline-code">serviciosescolarescentro.dae@correo.buap.mx</span></p>
+            <p><strong>CU:</strong><br> <span class="inline-code">serviciosescolarescu.dae@correo.buap.mx</span></p>
+            <p><strong>CU2:</strong><br> <span class="inline-code">serviciosescolarescu2.dae@correo.buap.mx</span></p>
+            <p><strong>Regionales:</strong><br> <span class="inline-code">serviciosescolaresregionales.dae@correo.buap.mx</span></p>
+          </div>
+          <div>
+            <p><strong>Salud:</strong><br> <span class="inline-code">serviciosescolaressalud.dae@correo.buap.mx</span></p>
+            <p><strong>Tehuacán:</strong><br> <span class="inline-code">serviciosescolarestehuacan.dae@correo.buap.mx</span></p>
+            <p><strong>Teziutlán:</strong><br> <span class="inline-code">serviciosescolaresteziutlan.dae@correo.buap.mx</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FINAL -->
+    <div class="section-card" id="finalizar">
+      <div class="section-title">✅ Ya casi terminas</div>
+      <div class="section-body">
+        <p>Cuando tu vigencia esté activa, ve a tu UMF con los documentos originales y recoge tu carnet.</p>
+        <div style="background:#eaf3ed; padding:1rem; border-radius:1rem; margin-top:1rem; border-left:4px solid #0A2240;">
+          🎉 Con el carnet ya puedes usar todos los servicios médicos del IMSS.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Portal estudiantil · Información actualizada IMSS / BUAP 2025 · Solo consulta
+    </div>
+
+  </div><!-- /content -->
+</div><!-- /main-card -->
+</body>
+</html>
