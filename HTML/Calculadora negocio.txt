@@ -1,0 +1,222 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Punto de Cobro</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    background: #f4f4f4;
+}
+
+h1{
+    text-align:center;
+}
+
+.productos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:10px;
+    margin-bottom:20px;
+}
+
+button{
+    padding:15px;
+    border:none;
+    border-radius:8px;
+    background:#2196F3;
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1976D2;
+}
+
+.ticket{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+
+.total{
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+    box-sizing:border-box;
+}
+
+.cambio{
+    margin-top:15px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.limpiar{
+    background:#e53935;
+    margin-top:15px;
+    width:100%;
+}
+
+.limpiar:hover{
+    background:#c62828;
+}
+
+.calcular{
+    background:#43A047;
+    margin-top:10px;
+    width:100%;
+}
+
+.calcular:hover{
+    background:#2E7D32;
+}
+</style>
+</head>
+<body>
+
+<h1>Punto de Cobro</h1>
+
+<div class="productos">
+
+<button onclick="agregar('Chilaquiles',40)">Chilaquiles $40</button>
+
+<button onclick="agregar('Cemita de cochinita',30)">
+Cemita de cochinita $30
+</button>
+
+<button onclick="agregar('Tacos orden de 3',40)">
+Tacos orden de 3 $40
+</button>
+
+<button onclick="agregar('Tacos orden de 5',65)">
+Tacos orden de 5 $65
+</button>
+
+<button onclick="agregar('Agua de sabor',30)">
+Agua de sabor $30
+</button>
+
+<button onclick="agregar('Coca Cola',25)">
+Coca Cola $25
+</button>
+
+<button onclick="agregar('Boing',20)">
+Boing $20
+</button>
+
+<button onclick="agregar('Cóctel Fruta',30)">
+Cóctel Fruta $30
+</button>
+
+<button onclick="agregar('Gelatina',10)">
+Gelatina $10
+</button>
+
+<button onclick="agregar('Botana',15)">
+Botana $15
+</button>
+
+<button onclick="agregar('2 Botanas',25)">
+2 Botanas $25
+</button>
+
+</div>
+
+<div class="ticket">
+
+<h2>Productos agregados</h2>
+
+<ul id="lista"></ul>
+
+<div class="total">
+Total: $<span id="total">0</span>
+</div>
+
+<input
+type="number"
+id="pago"
+placeholder="Monto recibido del cliente">
+
+<button class="calcular" onclick="calcularCambio()">
+Calcular cambio
+</button>
+
+<div class="cambio" id="resultadoCambio">
+Cambio: $0
+</div>
+
+<button class="limpiar" onclick="limpiarCuenta()">
+Limpiar cuenta
+</button>
+
+</div>
+
+<script>
+
+let total = 0;
+
+function agregar(nombre, precio){
+
+    const lista = document.getElementById("lista");
+
+    const item = document.createElement("li");
+    item.textContent = `${nombre} - $${precio}`;
+
+    lista.appendChild(item);
+
+    total += precio;
+
+    document.getElementById("total").textContent = total;
+}
+
+function calcularCambio(){
+
+    const pago = Number(document.getElementById("pago").value);
+
+    if(!pago){
+        alert("Ingresa el monto recibido.");
+        return;
+    }
+
+    const cambio = pago - total;
+
+    if(cambio < 0){
+        document.getElementById("resultadoCambio").innerHTML =
+        `Faltan: $${Math.abs(cambio)}`;
+    }else{
+        document.getElementById("resultadoCambio").innerHTML =
+        `Cambio: $${cambio}`;
+    }
+}
+
+function limpiarCuenta(){
+
+    document.getElementById("lista").innerHTML = "";
+    document.getElementById("total").textContent = "0";
+    document.getElementById("resultadoCambio").textContent = "Cambio: $0";
+    document.getElementById("pago").value = "";
+
+    total = 0;
+}
+
+</script>
+
+</body>
+</html>
